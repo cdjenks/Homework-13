@@ -13,7 +13,8 @@ router.get("/", function (req, res) {
 });
 
 router.post("/api/burgers", function (req, res) {
-    cat.insertOne(req.body.burger_name, req.body.devoured, function (result) {
+    console.log(req.body)
+    burger.insertOne(req.body.burger_name, function (result) {
         // Send back the ID of the new quote
         res.json({ id: result.insertId });
     });
@@ -24,7 +25,7 @@ router.put("/api/cats/:id", function (req, res) {
 
     console.log("Id Number:", selectedBurgerId);
 
-    cat.updateOne(selectedBurgerId, function (result) {
+    burger.updateOne(selectedBurgerId, function (result) {
         if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
             return res.status(404).end();
