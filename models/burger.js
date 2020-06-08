@@ -11,8 +11,13 @@ const burger = {
             cb(result);
         });
     },
-    updateOne: function (idNum, cb) {
-        orm.updateOne("burgers", idNum, function (result) {
+    devourIt: function (idNum, cb) {
+        orm.devourIt("burgers", idNum, function (result) {
+            cb(result);
+        });
+    },
+    wantAgain: function (idNum, cb) {
+        orm.wantAgain("burgers", idNum, function (result) {
             cb(result);
         });
     },

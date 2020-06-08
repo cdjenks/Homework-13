@@ -17,8 +17,15 @@ const orm = {
             cb(result);
         })
     },
-    updateOne: function (tableName, idNum, cb) {
+    devourIt: function (tableName, idNum, cb) {
         let queryString = "UPDATE ?? SET burgers.devoured =  TRUE WHERE burgers.id = ?"
+        connection.query(queryString, [tableName, idNum], function (err, result) {
+            if (err) throw err;
+            cb(result);
+        })
+    },
+    wantAgain: function (tableName, idNum, cb) {
+        let queryString = "UPDATE ?? SET burgers.devoured =  FALSE WHERE burgers.id = ?"
         connection.query(queryString, [tableName, idNum], function (err, result) {
             if (err) throw err;
             cb(result);

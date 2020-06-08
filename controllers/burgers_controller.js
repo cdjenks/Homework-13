@@ -23,9 +23,22 @@ router.post("/api/burgers", function (req, res) {
 router.put("/api/cats/:id", function (req, res) {
     let selectedBurgerId = req.params.id;
 
-    console.log("Id Number:", selectedBurgerId);
 
-    burger.updateOne(selectedBurgerId, function (result) {
+    burger.devourIt(selectedBurgerId, function (result) {
+        if (result.changedRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
+
+router.put("/api/cats/:id", function (req, res) {
+    let selectedBurgerId = req.params.id;
+
+
+    burger.wantAgain(selectedBurgerId, function (result) {
         if (result.changedRows == 0) {
             // If no rows were changed, then the ID must not exist, so 404
             return res.status(404).end();

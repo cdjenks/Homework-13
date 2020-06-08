@@ -16,17 +16,31 @@ $(function () {
             })
     })
 
-    $(".devour-it").on("click", function (event) {
+    $(".devour-it-btn").on("click", function (event) {
         let id = $(this).data("id");
+        let devoured = $(this).data("devoured");
 
         $.ajax("/api/cats/" + id, {
             type: "PUT",
-            data: id
+            data: devoured
         }).then(
             function () {
                 location.reload();
             }
         );
     });
+
+    // $(".want-again-btn").on("click", function (event) {
+    //     let id = $(this).data("id");
+
+    //     $.ajax("/api/cats/" + id, {
+    //         type: "PUT",
+    //         data: id
+    //     }).then(
+    //         function () {
+    //             location.reload();
+    //         }
+    //     );
+    // });
 
 })
