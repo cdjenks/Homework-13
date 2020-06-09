@@ -30,6 +30,13 @@ const orm = {
             if (err) throw err;
             cb(result);
         })
+    },
+    deleteAll: function (cb) {
+        let queryString = "DELETE FROM burgers"
+        connection.query(queryString, function (err, result) {
+            if (err) throw err;
+            cb(result);
+        })
     }
 };
 

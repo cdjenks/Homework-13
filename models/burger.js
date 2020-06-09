@@ -21,6 +21,11 @@ const burger = {
             cb(result);
         });
     },
+    deleteAll: function (cb) {
+        orm.deleteAll(function (result) {
+            cb(result);
+        });
+    }
 }
 
 module.exports = burger;
