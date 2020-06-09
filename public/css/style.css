@@ -5,7 +5,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgb(236, 221, 187);
+    /* background-color: rgb(236, 221, 187); */
+    background-color: rgb(17, 16, 16);
 }
 
 #notDevoured {
@@ -13,9 +14,7 @@ body {
     min-height: 200px;
     margin: 20px;
     background-color: rgb(175, 103, 103, .7);
-    border-radius: 5px;
-    
-    
+    border-radius: 5px;  
 }
 
 #alreadyDevoured {
@@ -58,6 +57,7 @@ h1 {
 h2 {
     color: white;
     font-size: 50px;
+    text-decoration: underline;
 }
 
 h5 {
@@ -71,6 +71,7 @@ li {
 }
 
 input {
+   
     width: 300px;
     height: 48px;
 }
